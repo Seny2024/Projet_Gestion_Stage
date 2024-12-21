@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Stages</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header>
+    <h1>Bienvenue dans la gestion des stages</h1>
+    <nav>
+        <a href="/stages">Liste des stages</a>
+        <a href="/stages/add">Ajouter un stage</a>
+        <a href="/">Retour</a>
+    </nav>
+</header>
+
+<h2>Liste des stages</h2>
+<ul>
+    <li th:each="stage : ${stages}">
+        <strong th:text="${stage.title}">Titre du stage</strong> <br>
+        <span th:text="${stage.description}">Description</span> <br>
+        <!-- Mise à jour pour gérer les étudiants nuls -->
+        <span th:text="'Étudiant : ' + (${stage.student != null} ? ${stage.student.name} : 'Aucun étudiant')">Nom de l'étudiant</span>
+    </li>
+</ul>
+
+<footer>
+    <p>&copy; 2024 Application de gestion des stages</p>
+</footer>
+</body>
+</html>

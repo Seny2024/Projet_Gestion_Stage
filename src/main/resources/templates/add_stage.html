@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/stages/add}" th:object="${stage}" method="post">
+    <input type="text" th:field="*{title}" placeholder="Titre"/>
+    <textarea th:field="*{description}" placeholder="Description"></textarea>
+    <select th:field="*{student.id}">
+        <option th:each="student : ${students}" th:value="${student.id}" th:text="${student.name}"></option>
+    </select>
+    <button type="submit">Ajouter</button>
+</form>
+
+<a href="/stages">Retour</a>
+
+</body>
+</html>

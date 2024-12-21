@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<div th:replace="layout :: header"></div>
+<section>
+    <h2>Liste des étudiants</h2>
+    <ul>
+        <li th:each="student : ${students}">
+            <span th:text="${student.name}"></span>
+            (<span th:text="${student.email}"></span>)
+        </li>
+    </ul>
+    <a href="/students/add">Ajouter un étudiant</a>
+    <a href="/">Retour</a>
+</section>
+<div th:replace="layout :: footer"></div>
+</body>
+</html>
