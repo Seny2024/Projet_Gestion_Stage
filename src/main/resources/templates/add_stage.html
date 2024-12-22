@@ -1,20 +1,41 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/style_add_stage.css}">
+    <title>Ajouter un Stage</title>
 </head>
 <body>
-<form th:action="@{/stages/add}" th:object="${stage}" method="post">
-    <input type="text" th:field="*{title}" placeholder="Titre"/>
-    <textarea th:field="*{description}" placeholder="Description"></textarea>
-    <select th:field="*{student.id}">
-        <option th:each="student : ${students}" th:value="${student.id}" th:text="${student.name}"></option>
-    </select>
-    <button type="submit">Ajouter</button>
-</form>
-
-<a href="/stages">Retour</a>
-
+<header>
+    <h1 class="main-title">Ajouter un Stage</h1>
+</header>
+<section class="section-add-stage">
+    <h2 class="title">Formulaire d'ajout</h2>
+    <form th:action="@{/stages/add}" th:object="${stage}" method="post" class="stage-form">
+        <div class="form-group">
+            <label for="title">Titre :</label>
+            <input type="text" id="title" th:field="*{title}" placeholder="Titre" required class="form-input"/>
+        </div>
+        <div class="form-group">
+            <label for="description">Description :</label>
+            <textarea id="description" th:field="*{description}" placeholder="Description" required class="form-input"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="student">Étudiant :</label>
+            <select id="student" th:field="*{student.id}" required class="form-input">
+                <option value="" disabled selected>Sélectionner un étudiant</option>
+                <option th:each="student : ${students}" th:value="${student.id}" th:text="${student.name}"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="submit-btn">Ajouter</button>
+        </div>
+    </form>
+    <div class="actions">
+        <a href="/stages" class="action-link secondary">Retour</a>
+    </div>
+</section>
+<footer>
+    <p>&copy; 2024 Gestion des Stages</p>
+</footer>
 </body>
 </html>

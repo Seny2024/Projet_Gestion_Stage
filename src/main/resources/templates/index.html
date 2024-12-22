@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Gestion des Étudiants et Stages</title>
+  <link rel="stylesheet" href="/style_index.css">
 </head>
 <body>
-<h1>Bienvenue sur l'application de gestion</h1>
-<a href="/students">Voir les Étudiants</a>
-<a href="/stages">Voir les Stages</a>
+
+<section class="main-content">
+  <h1>Bienvenue sur l'application de gestion</h1>
+  <p class="description">Choisissez une section pour gérer les données :</p>
+
+  <div class="links-container">
+    <ul>
+      <li><a href="/students" class="link-button">Voir les Étudiants</a></li>
+      <li><a href="/stages" class="link-button">Voir les Stages</a></li>
+    </ul>
+  </div>
+</section>
+
 </body>
 </html>

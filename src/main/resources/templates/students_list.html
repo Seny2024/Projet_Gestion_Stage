@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="layout :: head"></head>
+<head>
+    <link rel="stylesheet" th:href="@{/style_students_list.css}">
+    <title>Liste des Étudiants</title>
+</head>
 <body>
-<div th:replace="layout :: header"></div>
-<section>
-    <h2>Liste des étudiants</h2>
-    <ul>
-        <li th:each="student : ${students}">
-            <span th:text="${student.name}"></span>
-            (<span th:text="${student.email}"></span>)
-        </li>
-    </ul>
-    <a href="/students/add">Ajouter un étudiant</a>
-    <a href="/">Retour</a>
+<header>
+    <h1 class="main-title">Gestion des Étudiants</h1>
+</header>
+<div class="actions">
+    <a href="/students/add" class="action-link">Ajouter un étudiant</a>
+    <a href="/" class="action-link secondary">Retour</a>
+</div>
+<section class="section-students">
+    <h2 class="title">Liste des étudiants</h2>
+    <table class="student-table">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="student : ${students}">
+            <td th:text="${student.name}" class="student-name"></td>
+            <td th:text="${student.email}" class="student-email"></td>
+        </tr>
+        </tbody>
+    </table>
 </section>
-<div th:replace="layout :: footer"></div>
+<footer>
+    <p>&copy; 2024 Gestion des Étudiants</p>
+</footer>
 </body>
 </html>

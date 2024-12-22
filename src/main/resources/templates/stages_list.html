@@ -3,27 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Liste des Stages</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/style_stages_list.css">
 </head>
 <body>
-<header>
-    <h1>Bienvenue dans la gestion des stages</h1>
-    <nav>
-        <a href="/stages">Liste des stages</a>
-        <a href="/stages/add">Ajouter un stage</a>
-        <a href="/">Retour</a>
-    </nav>
-</header>
+<h1 class="main-title">Gestion des Stages</h1>
+<div class="section-stages">
+    <div class="actions">
+        <a href="/stages/add" class="action-link">Ajouter un stage</a>
+        <a href="/" class="action-link secondary">Retour</a>
+    </div>
 
-<h2>Liste des stages</h2>
-<ul>
-    <li th:each="stage : ${stages}">
-        <strong th:text="${stage.title}">Titre du stage</strong> <br>
-        <span th:text="${stage.description}">Description</span> <br>
-        <!-- Mise à jour pour gérer les étudiants nuls -->
-        <span th:text="'Étudiant : ' + (${stage.student != null} ? ${stage.student.name} : 'Aucun étudiant')">Nom de l'étudiant</span>
-    </li>
-</ul>
+    <section class="stage-list">
+        <h2 class="title">Liste des stages</h2>
+        <table class="student-table">
+            <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Étudiant</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="stage : ${stages}">
+                <td th:text="${stage.title}">Titre du stage</td>
+                <td th:text="${stage.description}">Description</td>
+                <td th:text="${stage.student != null ? stage.student.name : 'Aucun étudiant'}">Nom de l'étudiant</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</div>
 
 <footer>
     <p>&copy; 2024 Application de gestion des stages</p>

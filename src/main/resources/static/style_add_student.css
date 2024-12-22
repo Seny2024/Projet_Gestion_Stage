@@ -1,0 +1,93 @@
+/* Style global */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+/* Titre principal centré */
+.main-title {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+/* Section d'ajout d'étudiant */
+.section-add-student {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 10px; /* Décalage pour le contenu sous le titre */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre du formulaire */
+.title {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Formulaire */
+.student-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.submit-btn {
+    background-color: #1abc9c;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #16a085;
+}
+
+/* Liens d'action */
+.actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.action-link.secondary {
+    color: #3498db;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.action-link.secondary:hover {
+    color: #2980b9;
+}
+
+/* Pied de page */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #7f8c8d;
+}
