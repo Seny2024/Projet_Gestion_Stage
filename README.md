@@ -93,32 +93,6 @@ spring.jpa.show-sql=true
 - **Supprimer un Stage** :
   - **URL** : `DELETE /stages/{id}`
 
-## Exemples d'Utilisation
-
-### Ajouter un Étudiant
-
-```sh
-curl -X POST http://localhost:8080/students -H "Content-Type: application/json" -d '{"name": "John Doe", "email": "john.doe@example.com"}'
-```
-
-### Lister les Étudiants
-
-```sh
-curl -X GET http://localhost:8080/students
-```
-
-### Ajouter un Stage
-
-```sh
-curl -X POST http://localhost:8080/stages -H "Content-Type: application/json" -d '{"title": "Stage 1", "description": "Description 1", "student_id": 1}'
-```
-
-### Lister les Stages
-
-```sh
-curl -X GET http://localhost:8080/stages
-```
-
 ## Conclusion
 
 Ce manuel vous a guidé à travers les fonctionnalités de l'application de gestion des étudiants et des stages. Vous pouvez maintenant ajouter, consulter, lister et supprimer des étudiants et des stages en utilisant les endpoints fournis. Pour toute question ou assistance supplémentaire, n'hésitez pas à contacter le support technique.
