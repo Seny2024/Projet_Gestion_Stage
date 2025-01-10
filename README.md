@@ -98,5 +98,3 @@ spring.jpa.show-sql=true
 Ce manuel vous a guidé à travers les fonctionnalités de l'application de gestion des étudiants et des stages. Vous pouvez maintenant ajouter, consulter, lister et supprimer des étudiants et des stages en utilisant les endpoints fournis. Pour toute question ou assistance supplémentaire, n'hésitez pas à contacter le support technique.
 
 ---
-
-N'hésitez pas à explorer et à étendre les fonctionnalités de l'application selon vos besoins spécifiques. Bonne gestion des étudiants et des stages !
